@@ -1,0 +1,17 @@
+class Orang:
+    def __init__(self, nama_depan, nama_belakang, nomor_id):
+        self.nama_depan = nama_depan
+        self.nama_belakang = nama_belakang
+        self.nomor_id = nomor_id
+
+    def tampilkan_informasi(self):
+        print(f"Nama: {self.nama_depan} {self.nama_belakang}, ID: {self.nomor_id}")
+
+# Fungsi untuk membuat objek Orang dan menampilkan informasinya
+def buat_dan_tampilkan_orang(nama_depan, nama_belakang, nomor_id):
+    orang = Orang(nama_depan, nama_belakang, nomor_id)
+    orang.tampilkan_informasi()
+
+# Contoh penggunaan kelas Orang
+buat_dan_tampilkan_orang("Jaka", "Andriansyah", "12345")
+buat_dan_tampilkan_orang("Damar", "Justian", "678910")
