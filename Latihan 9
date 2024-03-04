@@ -1,0 +1,47 @@
+class Orang:
+    def __init__(self, nama, umur):
+        self.nama = nama
+        self.umur = umur
+
+    def info_orang(self):
+        print(f"Nama: {self.nama}")
+        print(f"Umur: {self.umur}")
+
+
+class Pelajar:
+    def __init__(self, niu, jurusan):
+        self.niu = niu
+        self.jurusan = jurusan
+
+    def info_pelajar(self):
+        print(f"NIU: {self.niu}")
+        print(f"Jurusan: {self.jurusan}")
+
+
+class Pengajar:
+    def __init__(self, departemen, mata_kuliah):
+        self.departemen = departemen
+        self.mata_kuliah = mata_kuliah
+
+    def info_pengajar(self):
+        print(f"Departemen: {self.departemen}")
+        print(f"Mata Kuliah: {self.mata_kuliah}")
+
+
+class Asdos(Orang, Pelajar, Pengajar):
+    def __init__(self, nama, umur, niu, jurusan, departemen, mata_kuliah):
+        # Memanggil konstruktor dari masing-masing parent class
+        Orang.__init__(self, nama, umur)
+        Pelajar.__init__(self, niu, jurusan)
+        Pengajar.__init__(self, departemen, mata_kuliah)
+
+    def info_asdos(self):
+        print("--- Informasi Asdos ---")
+        self.info_orang()
+        self.info_pelajar()
+        self.info_pengajar()
+
+
+# Contoh penggunaan
+asdos1 = Asdos("Profit Dwi Nugroho", 19, "515963", "Teknologi Rekayasa Internet", "Teknik Elektro Dan Informatika", "Pemrograman Berorientasi Objek")
+asdos1.info_asdos()
