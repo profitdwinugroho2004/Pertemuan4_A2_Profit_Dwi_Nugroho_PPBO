@@ -1,0 +1,25 @@
+class Asdos:
+    def __init__(self, nama_depan, nama_belakang, nomor_id):
+        self.nama_depan = nama_depan
+        self.nama_belakang = nama_belakang
+        self.nomor_id = nomor_id
+        self.mata_kuliah = ""
+
+    def enrol(self, mata_kuliah):
+        self.mata_kuliah = mata_kuliah
+        print(f"{self.nama_depan} {self.nama_belakang} {self.nomor_id} : berhasil terdaftar di mata kuliah {mata_kuliah}.")
+
+    def mengajar(self, topik):
+        if self.mata_kuliah:
+            print(f"{self.nama_depan} {self.nama_belakang} {self.nomor_id} : sedang mengajar topik {topik} pada mata kuliah {self.mata_kuliah}.")
+        else:
+            print(f"{self.nama_depan} {self.nama_belakang} {self.nomor_id} belum terdaftar di mata kuliah.")
+
+# Membuat objek uswatun
+uswatun = Asdos(nama_depan="Uswatun", nama_belakang="Hasanah", nomor_id="456456")
+
+# Memanggil method enrol dengan mata kuliah "Big Data"
+uswatun.enrol("Big Data")
+
+# Memanggil method mengajar dengan topik "Kecerdasan Artifisial"
+uswatun.mengajar("Kecerdasan Artifisial")
