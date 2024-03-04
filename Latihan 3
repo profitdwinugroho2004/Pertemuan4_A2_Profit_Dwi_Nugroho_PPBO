@@ -1,0 +1,32 @@
+class Orang:
+    def __init__(self, nama_depan, nama_belakang):
+        self.nama_depan = nama_depan
+        self.nama_belakang = nama_belakang
+
+class Karyawan(Orang):
+    TETAP = "TETAP"
+    TDK_TETAP = "TDK_TETAP"
+
+    def __init__(self, nama_depan, nama_belakang, nomer_id, status_karyawan):
+        super().__init__(nama_depan, nama_belakang)
+        self.nomer_id = nomer_id
+        if status_karyawan in [self.TETAP, self.TDK_TETAP]:
+            self.status_karyawan = status_karyawan
+        else:
+            raise ValueError("Status karyawan harus TETAP atau TDK_TETAP")
+
+# Fungsi untuk menampilkan informasi karyawan
+def tampilkan_informasi_karyawan(karyawan):
+    print("--------------------------")
+    print(f"Nama: {karyawan.nama_depan} {karyawan.nama_belakang}")
+    print(f"ID: {karyawan.nomer_id}")
+    print(f"Status Karyawan: {karyawan.status_karyawan}")
+    print("--------------------------")
+
+# Contoh penggunaan
+karyawan1 = Karyawan("Rangga", "Ferdiansyah", "2765", Karyawan.TETAP)
+karyawan2 = Karyawan("Saka", "Azkullah", "8765", Karyawan.TDK_TETAP)
+
+# Menampilkan informasi karyawan
+tampilkan_informasi_karyawan(karyawan1)
+tampilkan_informasi_karyawan(karyawan2)
