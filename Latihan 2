@@ -1,0 +1,51 @@
+class Mahasiswa:
+    SARJANA = "SARJANA"
+    MASTER = "MASTER"
+    DOKTOR = "DOKTOR"
+
+    def __init__(self, nama_depan, nama_belakang, nomor_id, jenjang):
+        self.nama_depan = nama_depan
+        self.nama_belakang = nama_belakang
+        self.nomor_id = nomor_id
+        if jenjang in [self.SARJANA, self.MASTER, self.DOKTOR]:
+            self.jenjang = jenjang
+        else:
+            raise ValueError("Jenjang mahasiswa harus SARJANA, MASTER, atau DOKTOR")
+        self.matkul = []
+
+    def enrol(self, mata_kuliah):
+        self.matkul.append(mata_kuliah)
+
+    def drop(self, mata_kuliah):
+        try:
+            self.matkul.remove(mata_kuliah)
+        except ValueError:
+            print(f"{self.nama_depan} tidak mengambil mata kuliah {mata_kuliah}.")
+
+    def tampilkan_informasi(self):
+        print(f"Mahasiswa: {self.nama_depan} {self.nama_belakang} (ID: {self.nomor_id})")
+        print(f"Jenjang: {self.jenjang}")
+        print("Mata Kuliah yang Diambil:")
+        if not self.matkul:
+            print("Belum ada mata kuliah yang diambil.")
+        else:
+            for matkul in self.matkul:
+                print(f"- {matkul}")
+        print("--------------------------------------------------------")
+
+# Contoh penggunaan
+mahasiswa1 = Mahasiswa("John", "Doe", "2766", Mahasiswa.SARJANA)
+mahasiswa2 = Mahasiswa("Saka", "Azkullah", "8765", Mahasiswa.MASTER)
+
+mahasiswa1.enrol("Jaringan Komputer")
+mahasiswa1.enrol("Pemrograman Berorientasi Objek")
+mahasiswa2.enrol("Kesehatan dan Keselamatan Kerja")
+
+mahasiswa1.tampilkan_informasi()
+mahasiswa2.tampilkan_informasi()
+
+mahasiswa1.drop("Basis Data")
+mahasiswa2.drop("Teknik Telekomunikasi")  # Teknik Telekomunikasi tidak diambil oleh mahasiswa2
+
+mahasiswa1.tampilkan_informasi()
+mahasiswa2.tampilkan_informasi()
