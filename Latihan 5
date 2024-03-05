@@ -1,0 +1,17 @@
+class Mahasiswa:
+    def __init__(self, jenjang, nama_depan, nama_belakang, nomor_id):
+        self.jenjang = jenjang
+        self.nama_depan = nama_depan
+        self.nama_belakang = nama_belakang
+        self.nomor_id = nomor_id
+        self.mata_kuliah_diambil = []
+
+    def enrol(self, mata_kuliah):
+        self.mata_kuliah_diambil.append(mata_kuliah)
+        print(f"{self.nama_depan} telah mendaftar mata kuliah: {mata_kuliah}")
+
+# Membuat objek bowo menggunakan kelas Mahasiswa
+bowo = Mahasiswa(jenjang="SARJANA", nama_depan="Bowo", nama_belakang="Nugroho", nomor_id="987654")
+
+# Memanggil metode enrol untuk bowo dengan argumen "Basis Data"
+bowo.enrol("Basis Data")
