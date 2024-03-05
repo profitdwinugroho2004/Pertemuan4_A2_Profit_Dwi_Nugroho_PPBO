@@ -1,0 +1,16 @@
+class Pengajar:
+    def __init__(self):
+        self.matkul_diajar = []
+
+    def mengajar(self, mata_kuliah):
+        self.matkul_diajar.append(mata_kuliah)
+        print(f"Pengajar telah menambahkan mata kuliah: {mata_kuliah}")
+
+# Membuat objek pengajar1 menggunakan kelas Pengajar
+pengajar1 = Pengajar()
+
+# Memanggil metode mengajar untuk menambahkan mata kuliah "Pemrograman Python"
+pengajar1.mengajar("Pemrograman Berorientasi Objek")
+
+# Menampilkan informasi pengajar1
+print("Mata Kuliah yang Diajar oleh Pengajar1:", pengajar1.matkul_diajar)
