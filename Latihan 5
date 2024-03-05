@@ -15,3 +15,9 @@ bowo = Mahasiswa(jenjang="SARJANA", nama_depan="Bowo", nama_belakang="Nugroho", 
 
 # Memanggil metode enrol untuk bowo dengan argumen "Basis Data"
 bowo.enrol("Basis Data")
+
+# Menampilkan informasi tentang mahasiswa bowo
+print(f"Informasi Mahasiswa {bowo.nama_depan} {bowo.nama_belakang}:")
+print(f"Jenjang: {bowo.jenjang}")
+print(f"Nomor ID: {bowo.nomor_id}")
+print(f"Daftar Mata Kuliah yang Diambil: {bowo.matkul_diambil}")
