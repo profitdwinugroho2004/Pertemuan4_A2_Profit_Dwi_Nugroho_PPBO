@@ -1,0 +1,17 @@
+class Pelajar:
+    def __init__(self):
+        self.matkul = []  # Inisialisasi list kosong untuk menyimpan mata kuliah
+
+    def enrol(self, mata_kuliah):
+        self.matkul.append(mata_kuliah)
+        print(f"Pelajar telah menambahkan mata kuliah: {mata_kuliah}")
+
+# Membuat objek pelajar1 dari kelas Pelajar
+pelajar1 = Pelajar()
+
+# Menggunakan metode enrol untuk menambahkan mata kuliah
+pelajar1.enrol("Pemrograman Berorientasi Objek")
+pelajar1.enrol("Basis Data")
+
+# Menampilkan informasi tentang mata kuliah yang diambil oleh pelajar1
+print("Daftar mata kuliah yang diambil oleh pelajar1:", pelajar1.matkul)
