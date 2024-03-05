@@ -1,0 +1,23 @@
+class Dosen:
+    def __init__(self, status_karyawan, nama_depan, nama_belakang, nomor_id):
+        self.status_karyawan = status_karyawan
+        self.nama_depan = nama_depan
+        self.nama_belakang = nama_belakang
+        self.nomor_id = nomor_id
+        self.matkul_diajar = []
+
+    def mengajar(self, mata_kuliah):
+        self.matkul_diajar.append(mata_kuliah)
+        print(f"Dosen {self.nama_depan} {self.nama_belakang} telah menambahkan mata kuliah: {mata_kuliah}")
+
+# Membuat objek rizki dari kelas Dosen dengan argument yang diberikan
+rizki = Dosen(status_karyawan="TETAP", nama_depan="Rizki", nama_belakang="Setiabudi", nomor_id="456789")
+
+# Memanggil metode mengajar dan memberikan argument "Statistik"
+rizki.mengajar("Statistik")
+
+# Menampilkan informasi tentang dosen rizki
+print(f"Informasi Dosen {rizki.nama_depan} {rizki.nama_belakang}:")
+print(f"Status Karyawan: {rizki.status_karyawan}")
+print(f"Nomor ID: {rizki.nomor_id}")
+print(f"Daftar Mata Kuliah yang Diajarkan: {rizki.matkul_diajar}")
